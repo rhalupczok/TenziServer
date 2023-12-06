@@ -1,0 +1,13 @@
+20231201	11:09:18	b722520d-7049-417e-9bd0-4b5f8c4adc39	Error: Not allowed by CORS:
+20231201	11:09:25	33f65a7d-15ff-439c-9aa8-7c66cba56970	Error: Not allowed by CORS:
+20231204	09:15:26	cd0cc7bb-626e-472f-82de-6beff1dac461	Error: Not allowed by CORS:
+20231204	09:15:26	01085966-81bb-42af-bda4-d05850810935	Error: Not allowed by CORS:
+20231204	09:15:31	caded53d-c72e-479a-9de8-6772b8715cd6	Error: Not allowed by CORS:
+20231204	09:15:33	9ef5cbdf-b41b-49ef-bcc1-9f446c89352a	Error: Not allowed by CORS:
+20231204	09:17:35	75091af7-f8fc-497b-bb04-52251f58e24c	Error: Not allowed by CORS:
+20231204	09:17:37	2554a8de-b9ab-4c84-a23f-710b68d0f181	Error: Not allowed by CORS:
+20231204	09:17:37	3301efb9-8e5c-4c2f-a031-39f7e324e6a4	Error: Not allowed by CORS:
+20231204	09:17:37	31c13d3f-074d-49a3-898e-f3b9e9bea484	Error: Not allowed by CORS:
+20231204	09:17:37	6a95d29d-af5e-4d24-a8d5-58a012e25408	Error: Not allowed by CORS:
+20231204	09:40:13	daf6fff3-0fdd-45e1-9cda-15396c929d83	Error: Not allowed by CORS:
+20231204	09:40:45	631f6558-db9b-421c-b6ae-2957d200933a	Error: Not allowed by CORS:
