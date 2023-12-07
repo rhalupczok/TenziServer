@@ -2,7 +2,9 @@ const allowedOrigins = [
     "http://localhost:3500",
     "http://localhost:3001",
     "http://localhost:3000",
-    "http://rhalupczok.github.io/",
+    "https://rhalupczok.github.io",
+    "http://rhalupczok.github.io",
+    "rhalupczok.github.io",
 ];
 
 module.exports = allowedOrigins;
