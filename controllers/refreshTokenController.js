@@ -1,4 +1,4 @@
-const User = require("../model/User");
+const TenziUser = require("../model/TenziUser");
 const jwt = require("jsonwebtoken");
 
 const handleRefreshToken = async (req, res) => {
@@ -12,7 +12,7 @@ const handleRefreshToken = async (req, res) => {
         secure: true,
     });
 
-    const foundUser = await User.findOne({ refreshToken }).exec();
+    const foundUser = await TenziUser.findOne({ refreshToken }).exec();
 
     // ! detected refresh token reuse !
     if (!foundUser) {
@@ -21,16 +21,16 @@ const handleRefreshToken = async (req, res) => {
             process.env.REFRESH_TOKEN_SECRET,
             async (err, decoded) => {
                 if (err) return res.sendStatus(403); // forbidden
-                const hackedUser = await User.findOne({
+                const hackedUser = await TenziUser.findOne({
                     username: decoded.username,
                 }).exec();
                 hackedUser.refreshToken = []; // clear all refresh tokens from hacked user
                 const result = await hackedUser.save();
+                console.log(result);
             }
         );
         return res.sendStatus(403); //Forbidden
     }
-
     const newRefreshTokenArray = foundUser.refreshToken.filter(
         (rt) => rt !== refreshToken
     );
@@ -48,11 +48,12 @@ const handleRefreshToken = async (req, res) => {
 
             //refresh token was still valid
             const user = foundUser.username;
-            const roles = Object.values(foundUser.roles);
+            const scoresArr = foundUser.tenziScores;
+            const roles = Object.values(foundUser.roles).filter(Boolean);
             const accessToken = jwt.sign(
                 {
                     UserInfo: {
-                        username: decoded.username,
+                        username: user,
                         roles: roles,
                     },
                 },

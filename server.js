@@ -47,9 +47,7 @@ app.use("/refresh", require("./routes/refresh"));
 app.use("/logout", require("./routes/logout"));
 
 app.use(verifyJWT); // insert JWT verify
-// app.use("/employees", require("./routes/api/employees"));
-// app.use("/users", require("./routes/api/users"));
-app.use("/tenziuserscores", require("./routes/api/TenzScores"));
+app.use("/tenziGame", require("./routes/api/tenziGameScores"));
 
 //errors
 app.all("*", (req, res) => {

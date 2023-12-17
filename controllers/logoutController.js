@@ -1,4 +1,4 @@
-const User = require("../model/User");
+const TenziUser = require("../model/TenziUser");
 
 const handleLogout = async (req, res) => {
     //on client also delete the accessToken
@@ -8,7 +8,9 @@ const handleLogout = async (req, res) => {
     const refreshToken = cookies.jwt;
 
     //is rftoken in db ?
-    const foundUser = await User.findOne({ refreshToken: refreshToken }).exec();
+    const foundUser = await TenziUser.findOne({
+        refreshToken: refreshToken,
+    }).exec();
     if (!foundUser) {
         res.clearCookie("jwt", {
             httpOnly: true,
