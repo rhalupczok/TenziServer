@@ -61,6 +61,11 @@ const deleteUserAccount = async (req, res) => {
             .status(204)
             .json({ message: `User name: ${req.params.userName} - not found` });
     const result = await foundUser.deleteOne({ _id: req.body.id });
+    res.clearCookie("jwt", {
+        httpOnly: true,
+        sameSite: "None",
+        secure: true,
+    });
     res.json(result);
 };
 

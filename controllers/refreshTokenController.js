@@ -26,7 +26,6 @@ const handleRefreshToken = async (req, res) => {
                 }).exec();
                 hackedUser.refreshToken = []; // clear all refresh tokens from hacked user
                 const result = await hackedUser.save();
-                console.log(result);
             }
         );
         return res.sendStatus(403); //Forbidden
