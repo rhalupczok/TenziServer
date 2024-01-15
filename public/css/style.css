@@ -9,6 +9,8 @@ body {
     min-height: 100vh;
     color: #fff;
     background-color: #000;
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
